@@ -9,7 +9,7 @@
 
 Summary: GNOME screen reader for people with visual impairments
 Name: orca
-Version: 2.19.4
+Version: 2.19.5
 Release: %mkrel 1
 License: LGPL
 Group: Accessibility
