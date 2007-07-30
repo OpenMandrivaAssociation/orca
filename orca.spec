@@ -9,7 +9,7 @@
 
 Summary: GNOME screen reader for people with visual impairments
 Name: orca
-Version: 2.19.5
+Version: 2.19.6
 Release: %mkrel 1
 License: LGPL
 Group: Accessibility
@@ -72,6 +72,6 @@ rm -rf $RPM_BUILD_ROOT
 %_mandir/man1/orca.1*
 %{_datadir}/orca
 %{_datadir}/applications/*.desktop
-%{_datadir}/icons/hicolor/48x48/apps/*
+%{_datadir}/icons/hicolor/*/apps/*
 
 
