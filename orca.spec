@@ -66,7 +66,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(-,root,root,-)
-%doc README ChangeLog NEWS
+%doc README NEWS
 %{_bindir}/orca
 %{py_platsitedir}/*orca*
 %_mandir/man1/orca.1*
