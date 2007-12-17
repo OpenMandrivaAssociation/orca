@@ -16,7 +16,6 @@ Group: Accessibility
 URL: http://live.gnome.org/Orca/
 Source0: http://ftp.gnome.org/pub/GNOME/sources/orca/orca-%{version}.tar.bz2
 
-BuildRoot: %{_tmppath}/orca-%{version}-%{release}-buildroot
 BuildRequires:  pygtk2.0-devel >= %{pygtk2_version}
 BuildRequires:  pyorbit-devel >= %{pyorbit_version}
 BuildRequires:	gail-devel >= %{gail_version}
