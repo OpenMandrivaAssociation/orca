@@ -26,6 +26,7 @@ BuildRequires:	gnome-speech-devel >= %{gnome_speech_version}
 BuildRequires:  brlapi-devel
 BuildRequires:	gnome-python-bonobo
 BuildRequires:	desktop-file-utils
+BuildRequires:	chrpath
 Requires: gnome-python-bonobo
 Requires: pygtk2.0-libglade
 Requires: gnome-terminal
@@ -50,8 +51,9 @@ desktop-file-install --vendor="" \
   --add-category="X-MandrivaLinux-MoreApplications-Accessibility" \
   --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 
-
 %find_lang %{name}
+
+chrpath -d %buildroot%{py_platsitedir}/*orca*/*.so
 
 %post
 %update_menus
