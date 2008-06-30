@@ -9,9 +9,9 @@
 
 Summary: GNOME screen reader for people with visual impairments
 Name: orca
-Version: 2.22.2
+Version: 2.22.3
 Release: %mkrel 1
-License: LGPL
+License: LGPLv2+
 Group: Accessibility
 URL: http://live.gnome.org/Orca/
 Source0: http://ftp.gnome.org/pub/GNOME/sources/orca/orca-%{version}.tar.bz2
