@@ -10,7 +10,7 @@
 Summary: GNOME screen reader for people with visual impairments
 Name: orca
 Version: 2.23.4
-Release: %mkrel 1
+Release: %mkrel 2
 License: LGPLv2+
 Group: Accessibility
 URL: http://live.gnome.org/Orca/
@@ -24,6 +24,7 @@ BuildRequires:	eel-devel >= %{eel_version}
 BuildRequires:	libat-spi-devel >= %{libspi_version}
 BuildRequires:	gnome-speech-devel >= %{gnome_speech_version}
 BuildRequires:  brlapi-devel
+BuildRequires:	brlapi-python
 BuildRequires:	gnome-python-bonobo
 BuildRequires:	desktop-file-utils
 BuildRequires:	chrpath
