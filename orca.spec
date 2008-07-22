@@ -26,9 +26,12 @@ BuildRequires:	gnome-speech-devel >= %{gnome_speech_version}
 BuildRequires:  brlapi-devel
 BuildRequires:	brlapi-python
 BuildRequires:	gnome-python-bonobo
+#gw for wnck:
+BuildRequires:	gnome-python-desktop
 BuildRequires:	desktop-file-utils
 BuildRequires:	chrpath
 Requires: gnome-python-bonobo
+Requires: gnome-python-desktop
 Requires: pygtk2.0-libglade
 Requires: python-at-spi
 Requires: gnome-terminal
