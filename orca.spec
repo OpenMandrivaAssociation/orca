@@ -10,7 +10,7 @@
 Summary: GNOME screen reader for people with visual impairments
 Name: orca
 Version: 2.23.5
-Release: %mkrel 1
+Release: %mkrel 2
 License: LGPLv2+
 Group: Accessibility
 URL: http://live.gnome.org/Orca/
@@ -36,6 +36,8 @@ Requires: pygtk2.0-libglade
 Requires: python-at-spi
 Requires: gnome-terminal
 Requires: brlapi-python
+Obsoletes: lsr
+Provides: lsr
 
 %description
 A flexible, scriptable, extensible screen reader for the GNOME platform
