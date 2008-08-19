@@ -29,6 +29,7 @@ BuildRequires:	gnome-python-bonobo
 #gw for wnck:
 BuildRequires:	gnome-python-desktop
 BuildRequires:	desktop-file-utils
+BuildRequires:	intltool
 BuildRequires:	chrpath
 Requires: gnome-python-bonobo
 Requires: gnome-python-desktop
