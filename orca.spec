@@ -9,7 +9,7 @@
 
 Summary: GNOME screen reader for people with visual impairments
 Name: orca
-Version: 2.27.1
+Version: 2.27.2
 Release: %mkrel 1
 License: LGPLv2+
 Group: Accessibility
@@ -30,7 +30,6 @@ BuildRequires:	gnome-python-bonobo
 BuildRequires:	gnome-python-desktop
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
-BuildRequires:	chrpath
 Requires: gnome-python-bonobo
 Requires: gnome-python-desktop
 Requires: pygtk2.0-libglade
@@ -61,8 +60,6 @@ desktop-file-install --vendor="" \
   --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 
 %find_lang %{name}
-
-chrpath -d %buildroot%{py_platsitedir}/*orca*/*.so
 
 %if %mdkversion < 200900
 %post
