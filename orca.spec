@@ -27,6 +27,7 @@ BuildRequires:	python-at-spi
 BuildRequires:  brlapi-devel
 BuildRequires:	brlapi-python
 BuildRequires:	gnome-python-bonobo
+BuildRequires:	python-dbus
 #gw for wnck:
 BuildRequires:	gnome-python-desktop
 BuildRequires:	gnome-python-gconf
@@ -34,7 +35,8 @@ BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
 Requires: gnome-python-bonobo
 Requires: gnome-python-desktop
-Requires:	gnome-python-gconf
+Requires: gnome-python-gconf
+Requires: python-dbus
 Requires: pygtk2.0-libglade
 Requires: python-at-spi
 Requires: gnome-terminal
