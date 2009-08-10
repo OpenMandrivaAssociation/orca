@@ -29,10 +29,12 @@ BuildRequires:	brlapi-python
 BuildRequires:	gnome-python-bonobo
 #gw for wnck:
 BuildRequires:	gnome-python-desktop
+BuildRequires:	gnome-python-gconf
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
 Requires: gnome-python-bonobo
 Requires: gnome-python-desktop
+Requires:	gnome-python-gconf
 Requires: pygtk2.0-libglade
 Requires: python-at-spi
 Requires: gnome-terminal
