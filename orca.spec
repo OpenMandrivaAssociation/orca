@@ -9,7 +9,7 @@
 
 Summary: GNOME screen reader for people with visual impairments
 Name: orca
-Version: 2.29.2
+Version: 2.29.4
 Release: %mkrel 1
 License: LGPLv2+
 Group: Accessibility
@@ -23,7 +23,7 @@ BuildRequires:	gail-devel >= %{gail_version}
 BuildRequires:	eel-devel >= %{eel_version}
 BuildRequires:	libat-spi-devel >= %{libspi_version}
 BuildRequires:	gnome-speech-devel >= %{gnome_speech_version}
-BuildRequires:	python-at-spi
+BuildRequires:	python-pyatspi
 BuildRequires:  brlapi-devel
 BuildRequires:	brlapi-python
 BuildRequires:	gnome-python-bonobo
@@ -38,7 +38,7 @@ Requires: gnome-python-desktop
 Requires: gnome-python-gconf
 Requires: python-dbus
 Requires: pygtk2.0-libglade
-Requires: python-at-spi
+Requires: python-pyatspi
 Requires: gnome-terminal
 Requires: brlapi-python
 Obsoletes: lsr
