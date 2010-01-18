@@ -4,13 +4,12 @@
 %define brltty_version 3.7.2
 %define gail_version 1.8.11
 %define gnome_speech_version 0.3.10
-%define eel_version 2.14.0
 %define libspi_version 1.7.6
 
 Summary: GNOME screen reader for people with visual impairments
 Name: orca
 Version: 2.29.5
-Release: %mkrel 1
+Release: %mkrel 2
 License: LGPLv2+
 Group: Accessibility
 URL: http://live.gnome.org/Orca/
@@ -20,7 +19,6 @@ BuildRoot: %{_tmppath}/orca-%{version}-%{release}-buildroot
 BuildRequires:  pygtk2.0-devel >= %{pygtk2_version}
 BuildRequires:  pyorbit-devel >= %{pyorbit_version}
 BuildRequires:	gail-devel >= %{gail_version}
-BuildRequires:	eel-devel >= %{eel_version}
 BuildRequires:	libat-spi-devel >= %{libspi_version}
 BuildRequires:	gnome-speech-devel >= %{gnome_speech_version}
 BuildRequires:	python-pyatspi
