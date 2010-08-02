@@ -4,7 +4,6 @@
 %define brltty_version 3.7.2
 %define gail_version 1.8.11
 %define gnome_speech_version 0.3.10
-%define libspi_version 1.7.6
 
 Summary: GNOME screen reader for people with visual impairments
 Name: orca
@@ -19,9 +18,8 @@ BuildRoot: %{_tmppath}/orca-%{version}-%{release}-buildroot
 BuildRequires:  pygtk2.0-devel >= %{pygtk2_version}
 BuildRequires:  pyorbit-devel >= %{pyorbit_version}
 BuildRequires:	gail-devel >= %{gail_version}
-BuildRequires:	libat-spi-devel >= %{libspi_version}
 BuildRequires:	gnome-speech-devel >= %{gnome_speech_version}
-BuildRequires:	python-at-spi
+BuildRequires:	python-pyatspi
 BuildRequires:  brlapi-devel
 BuildRequires:	brlapi-python
 BuildRequires:	gnome-python-bonobo
@@ -31,12 +29,13 @@ BuildRequires:	gnome-python-desktop
 BuildRequires:	gnome-python-gconf
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
+BuildArch: noarch
 Requires: gnome-python-bonobo
 Requires: gnome-python-desktop
 Requires: gnome-python-gconf
 Requires: python-dbus
 Requires: pygtk2.0-libglade
-Requires: python-at-spi
+Requires: python-pyatspi
 Requires: gnome-terminal
 Requires: brlapi-python
 Obsoletes: lsr
@@ -64,16 +63,9 @@ desktop-file-install --vendor="" \
 
 %find_lang %{name}
 
-%if %mdkversion < 200900
-%post
-%update_menus
-%update_icon_cache hicolor
-%endif
-
-%if %mdkversion < 200900
-%postun
-%clean_menus
-%clean_icon_cache hicolor
+%if %_lib != lib
+mkdir %buildroot%_prefix/lib
+mv %buildroot%_libdir/* %buildroot%_prefix/lib
 %endif
 
 %clean
