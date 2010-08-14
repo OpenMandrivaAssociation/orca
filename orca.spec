@@ -36,6 +36,7 @@ Requires: gnome-python-gconf
 Requires: python-dbus
 Requires: pygtk2.0-libglade
 Requires: python-pyatspi
+Requires: python-at-spi
 Requires: gnome-terminal
 Requires: brlapi-python
 Obsoletes: lsr
