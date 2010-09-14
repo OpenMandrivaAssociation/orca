@@ -64,11 +64,6 @@ desktop-file-install --vendor="" \
 
 %find_lang %{name}
 
-%if %_lib != lib
-mkdir %buildroot%_prefix/lib
-mv %buildroot%_libdir/* %buildroot%_prefix/lib
-%endif
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
