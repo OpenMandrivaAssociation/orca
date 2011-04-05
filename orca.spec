@@ -28,7 +28,7 @@ BuildRequires:	pyxdg
 #gw for wnck:
 BuildRequires:	gnome-python-desktop
 BuildRequires:	gnome-python-gconf
-BuildRequires:	intltool
+BuildRequires:	intltool gnome-doc-utils
 BuildArch: noarch
 Requires: gnome-python-bonobo
 Requires: gnome-python-desktop
