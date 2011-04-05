@@ -7,7 +7,7 @@
 
 Summary: GNOME screen reader for people with visual impairments
 Name: orca
-Version: 2.32.1
+Version: 3.0.0
 Release: %mkrel 1
 License: LGPLv2+
 Group: Accessibility
@@ -41,8 +41,6 @@ Requires: python-at-spi
 Requires: python-at-spi
 Requires: gnome-terminal
 Requires: brlapi-python
-Obsoletes: lsr
-Provides: lsr
 
 %description
 A flexible, scriptable, extensible screen reader for the GNOME platform
@@ -64,7 +62,7 @@ desktop-file-install --vendor="" \
   --add-category="X-MandrivaLinux-MoreApplications-Accessibility" \
   --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 
-%find_lang %{name}
+%find_lang %{name} --with-gnome
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -78,5 +76,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/orca
 %{_datadir}/applications/*.desktop
 %{_datadir}/icons/hicolor/*/apps/*
-
-
+%{_sysconfdir}/xdg/autostart/*.desktop
