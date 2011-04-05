@@ -28,7 +28,6 @@ BuildRequires:	pyxdg
 #gw for wnck:
 BuildRequires:	gnome-python-desktop
 BuildRequires:	gnome-python-gconf
-BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
 BuildArch: noarch
 Requires: gnome-python-bonobo
@@ -56,11 +55,6 @@ that provides access via speech synthesis, braille, and magnification.
 %install
 rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
-
-desktop-file-install --vendor="" \
-  --remove-category="Application" \
-  --add-category="X-MandrivaLinux-MoreApplications-Accessibility" \
-  --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 
 %find_lang %{name} --with-gnome
 
