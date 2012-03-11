@@ -1,45 +1,34 @@
-%define pyorbit_version 2.0.1
-%define pygtk2_version 2.6.2
-%define gnome_python_version 2.6.2
-%define brltty_version 3.7.2
-%define gail_version 1.8.11
-%define gnome_speech_version 0.3.10
-
 Summary: GNOME screen reader for people with visual impairments
 Name: orca
-Version: 3.0.1
-Release: %mkrel 1
+Version: 3.2.2
+Release: 1
 License: LGPLv2+
 Group: Accessibility
 URL: http://live.gnome.org/Orca/
-Source0: http://ftp.gnome.org/pub/GNOME/sources/orca/orca-%{version}.tar.bz2
+Source0: http://ftp.gnome.org/pub/GNOME/sources/orca/orca-%{version}.tar.xz
+#BuildArch: noarch
 
-BuildRoot: %{_tmppath}/orca-%{version}-%{release}-buildroot
-BuildRequires:  pygtk2.0-devel >= %{pygtk2_version}
-BuildRequires:  pyorbit-devel >= %{pyorbit_version}
-BuildRequires:	gail-devel >= %{gail_version}
-BuildRequires:	gnome-speech-devel >= %{gnome_speech_version}
-BuildRequires:	python-at-spi
-BuildRequires:  brlapi-devel
-BuildRequires:	brlapi-python
-BuildRequires:	gnome-python-bonobo
+BuildRequires:	gnome-common
+Buildrequires:	gnome-doc-utils
+BuildRequires:	intltool
+Buildrequires:	pkgconfig(atspi-2)
+Buildrequires:	pkgconfig(gtk+-3.0)
+Buildrequires:	pkgconfig(pygobject-3.0)
+BuildRequires:	pkgconfig(python)
 BuildRequires:	python-dbus
+BuildRequires:	python-cairo
 BuildRequires:	pyxdg
-#gw for wnck:
-BuildRequires:	gnome-python-desktop
-BuildRequires:	gnome-python-gconf
-BuildRequires:	intltool gnome-doc-utils
-BuildArch: noarch
-Requires: gnome-python-bonobo
-Requires: gnome-python-desktop
-Requires: gnome-python-gconf
-Requires: python-dbus
-Requires: pyxdg
-Requires: pygtk2.0
-Requires: python-at-spi
-Requires: python-at-spi
-Requires: gnome-terminal
-Requires: brlapi-python
+BuildRequires:	python-speechd
+BuildRequires:	python-braille
+BuildRequires:	brlapi-python
+BuildRequires:	python-gi
+Requires:	python-dbus
+Requires:	python-cairo
+Requires:	pyxdg
+Requires:	python-speechd
+Requires:	python-braille
+Requires:	brlapi-python
+Requires:	pyatspi
 
 %description
 A flexible, scriptable, extensible screen reader for the GNOME platform
@@ -58,11 +47,7 @@ rm -rf %{buildroot}
 
 %find_lang %{name} --with-gnome
 
-%clean
-rm -rf %{buildroot}
-
 %files -f %{name}.lang
-%defattr(-,root,root,-)
 %doc README NEWS
 %{_bindir}/orca
 %{py_platsitedir}/*orca*
@@ -71,3 +56,4 @@ rm -rf %{buildroot}
 %{_datadir}/applications/*.desktop
 %{_datadir}/icons/hicolor/*/apps/*
 %{_sysconfdir}/xdg/autostart/*.desktop
+
