@@ -1,30 +1,31 @@
-Summary: GNOME screen reader for people with visual impairments
-Name: orca
-Version: 3.2.2
-Release: 1
-License: LGPLv2+
-Group: Accessibility
-URL: http://live.gnome.org/Orca/
-Source0: http://ftp.gnome.org/pub/GNOME/sources/orca/orca-%{version}.tar.xz
-#BuildArch: noarch
+%define url_ver	%(echo %{version}|cut -d. -f1,2)
 
-BuildRequires:	gnome-common
-Buildrequires:	gnome-doc-utils
-BuildRequires:	intltool
-Buildrequires:	pkgconfig(atspi-2)
-Buildrequires:	pkgconfig(gtk+-3.0)
-Buildrequires:	pkgconfig(pygobject-3.0)
-BuildRequires:	pkgconfig(python)
+Summary:	GNOME screen reader for people with visual impairments
+Name:		orca
+Version:	3.4.1
+Release:	1
+License:	LGPLv2+
+Group:		Accessibility
+URL:		http://live.gnome.org/Orca/
+Source0:	http://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
+Buildrequires:	pkgconfig(atspi-2) >= 2.1.92
+Buildrequires:	pkgconfig(gtk+-3.0) >= 3.1.14
+Buildrequires:	pkgconfig(pygobject-3.0) >= 2.90.3
+BuildRequires:	python-devel
 BuildRequires:	python-dbus
 BuildRequires:	python-cairo
-BuildRequires:	pyxdg
+BuildRequires:	python-pyxdg
 BuildRequires:	python-speechd
 BuildRequires:	python-braille
 BuildRequires:	brlapi-python
+BuildRequires:	intltool >= 0.40.0
+Buildrequires:	gnome-doc-utils >= 0.17.3
+BuildRequires:	typelib(Gtk)
 BuildRequires:	python-gi
+BuildRequires:	gnome-common
 Requires:	python-dbus
 Requires:	python-cairo
-Requires:	pyxdg
+Requires:	python-pyxdg
 Requires:	python-speechd
 Requires:	python-braille
 Requires:	brlapi-python
@@ -42,18 +43,16 @@ that provides access via speech synthesis, braille, and magnification.
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
 %find_lang %{name} --with-gnome
 
 %files -f %{name}.lang
 %doc README NEWS
-%{_bindir}/orca
+%{_bindir}/%{name}
 %{py_platsitedir}/*orca*
-%_mandir/man1/orca.1*
-%{_datadir}/orca
-%{_datadir}/applications/*.desktop
-%{_datadir}/icons/hicolor/*/apps/*
-%{_sysconfdir}/xdg/autostart/*.desktop
-
+%{_mandir}/man1/%{name}.1*
+%{_datadir}/%{name}
+%{_datadir}/applications/%{name}.desktop
+%{_datadir}/icons/hicolor/*/apps/%{name}.*
+%{_sysconfdir}/xdg/autostart/%{name}-autostart.desktop
