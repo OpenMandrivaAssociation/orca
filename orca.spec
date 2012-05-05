@@ -22,6 +22,7 @@ BuildRequires:	intltool >= 0.40.0
 Buildrequires:	gnome-doc-utils >= 0.17.3
 BuildRequires:	typelib(Gtk)
 BuildRequires:	python-gi
+BuildRequires:	pkgconfig(atspi-2)
 BuildRequires:	gnome-common
 Requires:	python-dbus
 Requires:	python-cairo
