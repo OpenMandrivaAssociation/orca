@@ -1,8 +1,13 @@
+# debug is empty anyway and rpmlint rejects build
+
+%define _enable_debug_packages %{nil}
+%define debug_package %{nil}
+
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 
 Summary:	GNOME screen reader for people with visual impairments
 Name:		orca
-Version:	3.4.2
+Version:	3.6.2
 Release:	1
 License:	LGPLv2+
 Group:		Accessibility
@@ -14,22 +19,23 @@ BuildRequires:	gnome-common
 BuildRequires:	intltool
 BuildRequires:	python-gi
 BuildRequires:	pkgconfig(atspi-2)
-Buildrequires:	pkgconfig(gnome-doc-utils) >= 0.17.3
-Buildrequires:	pkgconfig(gtk+-3.0) >= 3.1.14
-Buildrequires:	pkgconfig(pygobject-3.0) >= 2.90.3
+BuildRequires:	pkgconfig(gnome-doc-utils) >= 0.17.3
+BuildRequires:	pkgconfig(gtk+-3.0) >= 3.1.14
+BuildRequires:	pkgconfig(pygobject-3.0) >= 2.90.3
 BuildRequires:	pkgconfig(python)
 BuildRequires:	python-dbus
 BuildRequires:	python-cairo
 BuildRequires:	python-pyxdg
 BuildRequires:	python-speechd
 BuildRequires:	python-braille
+BuildRequires:	itstool
 Requires:	python-dbus
 Requires:	python-cairo
 Requires:	python-pyxdg
 Requires:	python-speechd
 Requires:	python-braille
 Requires:	brlapi-python
-Requires:	pyatspi
+Requires:	python-pyatspi
 
 %description
 A flexible, scriptable, extensible screen reader for the GNOME platform
@@ -56,4 +62,3 @@ that provides access via speech synthesis, braille, and magnification.
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.*
 %{_mandir}/man1/%{name}.1*
-
