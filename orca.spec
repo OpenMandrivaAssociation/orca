@@ -1,5 +1,4 @@
 # debug is empty anyway and rpmlint rejects build
-
 %define _enable_debug_packages %{nil}
 %define debug_package %{nil}
 
@@ -7,35 +6,34 @@
 
 Summary:	GNOME screen reader for people with visual impairments
 Name:		orca
-Version:	3.6.2
+Version:	3.8.2
 Release:	1
 License:	LGPLv2+
 Group:		Accessibility
-URL:		http://live.gnome.org/Orca/
-Source0:	http://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
+Url:		http://live.gnome.org/Orca/
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/orca/%{url_ver}/%{name}-%{version}.tar.xz
 
-BuildRequires:	brlapi-python
 BuildRequires:	gnome-common
 BuildRequires:	intltool
-BuildRequires:	python-gi
+BuildRequires:	itstool
+BuildRequires:	python3-brlapi
+BuildRequires:	python3-cairo
+BuildRequires:	python3-gi
+BuildRequires:	python3-louis
+BuildRequires:	python3-xdg
+BuildRequires:	python3-speechd
 BuildRequires:	pkgconfig(atspi-2)
 BuildRequires:	pkgconfig(gnome-doc-utils) >= 0.17.3
 BuildRequires:	pkgconfig(gtk+-3.0) >= 3.1.14
+BuildRequires:	pkgconfig(liblouis)
 BuildRequires:	pkgconfig(pygobject-3.0) >= 2.90.3
-BuildRequires:	pkgconfig(python)
-BuildRequires:	python-dbus
-BuildRequires:	python-cairo
-BuildRequires:	python-pyxdg
-BuildRequires:	python-speechd
-BuildRequires:	python-braille
-BuildRequires:	itstool
-Requires:	python-dbus
-Requires:	python-cairo
-Requires:	python-pyxdg
-Requires:	python-speechd
-Requires:	python-braille
-Requires:	brlapi-python
-Requires:	python-pyatspi
+BuildRequires:	pkgconfig(python3)
+Requires:	python3-atspi
+Requires:	python3-brlapi
+Requires:	python3-cairo
+Requires:	python3-louis
+Requires:	python3-xdg
+Requires:	python3-speechd
 
 %description
 A flexible, scriptable, extensible screen reader for the GNOME platform
@@ -57,8 +55,9 @@ that provides access via speech synthesis, braille, and magnification.
 %doc README NEWS
 %{_sysconfdir}/xdg/autostart/%{name}-autostart.desktop
 %{_bindir}/%{name}
-%{py_platsitedir}/*orca*
+%{py3_platsitedir}/*orca*
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/icons/hicolor/*/apps/%{name}.*
+%{_iconsdir}/hicolor/*/apps/%{name}.*
 %{_mandir}/man1/%{name}.1*
+
