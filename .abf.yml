@@ -1,6 +1,7 @@
 removed_sources:
   orca-3.14.0.tar.xz: c48b07dcc5ddd6872993e073ca2a4a565cf71d50
+  orca-3.16.1.tar.xz: 6b7d429f6f1fab6450bbbc48b0337a29dc277595
   orca-3.4.2.tar.xz: 1ca074e673ef40854c58a912c805f6edb5e56f20
   orca-3.6.2.tar.xz: ce192a1b8d81a6ec4b95b98812dc8de3bff2fde9
 sources:
-  orca-3.16.1.tar.xz: 6b7d429f6f1fab6450bbbc48b0337a29dc277595
+  orca-3.18.2.tar.xz: 2c142ef8ea111c98de658418dbd3acc1fd54b9bf

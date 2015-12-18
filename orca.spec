@@ -1,13 +1,14 @@
 # debug is empty anyway and rpmlint rejects build
 %define _enable_debug_packages %{nil}
 %define debug_package %{nil}
+%define _disable_rebuild_configure 1
 
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 
 Summary:	GNOME screen reader for people with visual impairments
 Name:		orca
-Version:	 3.16.1
-Release:	4
+Version:	3.18.2
+Release:	1
 License:	LGPLv2+
 Group:		Accessibility
 Url:		http://live.gnome.org/Orca/
@@ -58,6 +59,6 @@ that provides access via speech synthesis, braille, and magnification.
 %{py_puresitedir}/*orca*
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
-%{_iconsdir}/hicolor/*/apps/%{name}.*
+%{_iconsdir}/hicolor/*/apps/%{name}*.*
 %{_mandir}/man1/%{name}.1*
 
