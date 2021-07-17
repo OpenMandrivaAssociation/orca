@@ -58,7 +58,7 @@ that provides access via speech synthesis, braille, and magnification.
 %{_bindir}/%{name}
 %{py_puresitedir}/*orca*
 %{_datadir}/%{name}
-%{_datadir}/applications/%{name}.desktop
+#{_datadir}/applications/%{name}.desktop
 %{_iconsdir}/hicolor/*/apps/%{name}*.*
 %{_mandir}/man1/%{name}.1*
 
