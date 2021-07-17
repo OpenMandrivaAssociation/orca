@@ -7,7 +7,7 @@
 
 Summary:	GNOME screen reader for people with visual impairments
 Name:		orca
-Version:	3.30.0
+Version:	40.0
 Release:	1
 License:	LGPLv2+
 Group:		Accessibility
@@ -28,7 +28,7 @@ BuildRequires:	pkgconfig(gnome-doc-utils) >= 0.17.3
 BuildRequires:	pkgconfig(gtk+-3.0) >= 3.1.14
 BuildRequires:	pkgconfig(liblouis)
 BuildRequires:	pkgconfig(pygobject-3.0) >= 2.90.3
-BuildRequires:	pkgconfig(python3)
+BuildRequires:	pkgconfig(python)
 Requires:	python-atspi
 Requires:	python-brlapi
 Requires:	python-cairo
