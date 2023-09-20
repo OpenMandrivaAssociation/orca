@@ -7,12 +7,12 @@
 
 Summary:	GNOME screen reader for people with visual impairments
 Name:		orca
-Version:	44.1
+Version:	45.0
 Release:	1
 License:	LGPLv2+
 Group:		Accessibility
-Url:		http://live.gnome.org/Orca/
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/orca/%{url_ver}/%{name}-%{version}.tar.xz
+Url:		https://live.gnome.org/Orca/
+Source0:	https://ftp.gnome.org/pub/GNOME/sources/orca/%{url_ver}/%{name}-%{version}.tar.xz
 
 BuildRequires:	gnome-common
 BuildRequires:	intltool
