@@ -2,6 +2,8 @@
 %define _enable_debug_packages %{nil}
 %define debug_package %{nil}
 %define _disable_rebuild_configure 1
+# Bogus typelib dependencies, lets try disable it
+%global __requires_exclude %{?__requires_exclude:%__requires_exclude|}^typelib\\(Spiel
 
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 
