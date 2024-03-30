@@ -14,6 +14,7 @@ Group:		Accessibility
 Url:		https://live.gnome.org/Orca/
 Source0:	https://ftp.gnome.org/pub/GNOME/sources/orca/%{url_ver}/%{name}-%{version}.tar.xz
 
+BuildRequires:  meson
 BuildRequires:	gnome-common
 BuildRequires:	intltool
 BuildRequires:	itstool
@@ -45,16 +46,16 @@ that provides access via speech synthesis, braille, and magnification.
 %setup -q
 
 %build
-%configure
-%make_build
+%meson
+%meson_build
 
 %install
-%make_install
+%meson_install
 
 %find_lang %{name} --with-gnome
 
 %files -f %{name}.lang
-%doc README NEWS
+%doc README* NEWS
 %{_sysconfdir}/xdg/autostart/%{name}-autostart.desktop
 %{_bindir}/%{name}
 %{py_puresitedir}/*orca*
