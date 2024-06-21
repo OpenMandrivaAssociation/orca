@@ -10,7 +10,7 @@
 Summary:	GNOME screen reader for people with visual impairments
 Name:		orca
 Version:	46.1
-Release:	1
+Release:	2
 License:	LGPLv2+
 Group:		Accessibility
 Url:		https://live.gnome.org/Orca/
