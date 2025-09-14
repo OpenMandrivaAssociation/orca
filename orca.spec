@@ -66,3 +66,4 @@ that provides access via speech synthesis, braille, and magnification.
 %{_datadir}/%{name}
 %{_iconsdir}/hicolor/*/apps/%{name}*.*
 %{_mandir}/man1/%{name}.1*
+%{_prefix}/lib/systemd/user/orca.service
