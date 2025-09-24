@@ -9,7 +9,7 @@
 
 Summary:	GNOME screen reader for people with visual impairments
 Name:		orca
-Version:	49.beta
+Version:	49.1
 Release:	1
 License:	LGPLv2+
 Group:		Accessibility
@@ -26,14 +26,19 @@ BuildRequires:	python-gi
 BuildRequires:	python3-louis
 BuildRequires:	python-xdg
 BuildRequires:	python-speechd
+BuildRequires:  brlapi-devel
 BuildRequires:	pkgconfig(atspi-2)
+BuildRequires:  pkgconfig(atk-bridge-2.0)
 BuildRequires:	pkgconfig(gnome-doc-utils) >= 0.17.3
 BuildRequires:	pkgconfig(gtk+-3.0) >= 3.1.14
 BuildRequires:	pkgconfig(liblouis)
+BuildRequires:  pkgconfig(systemd)
+BuildRequires:  pkgconfig(libwnck-3.0)
 BuildRequires:	pkgconfig(pygobject-3.0) >= 2.90.3
 BuildRequires:  pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(python)
 BuildRequires:  python-dasbus
+BuildRequires:  python-psutil
 Requires:	python-atspi
 Requires:	python-brlapi
 Requires:	python-cairo
@@ -41,13 +46,25 @@ Requires:	python3-louis
 Requires:	python-xdg
 Requires:	python-speechd
 Requires: python-dasbus
+Requires: python-psutil
+Requires: speech-dispatcher
+Requires: libwnck3
+Requires: typelib(Wnck)
+Requires: gsettings-desktop-schemas
+Requires: dconf
+Requires: python-gi
+Requires: python-gobject3
+Requires: gtk+3.0
+Requires: gstreamer1.0-plugins-good
+Requires: gstreamer1.0-plugins-base
+Recommends: espeak-ng
 
 %description
 A flexible, scriptable, extensible screen reader for the GNOME platform
 that provides access via speech synthesis, braille, and magnification.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 %meson
