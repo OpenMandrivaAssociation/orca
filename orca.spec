@@ -9,8 +9,8 @@
 
 Summary:	GNOME screen reader for people with visual impairments
 Name:		orca
-Version:	49.5
-Release:	2
+Version:	50.0.9
+Release:	1
 License:	LGPLv2+
 Group:		Accessibility
 Url:		https://live.gnome.org/Orca/
@@ -80,7 +80,9 @@ that provides access via speech synthesis, braille, and magnification.
 %{_sysconfdir}/xdg/autostart/%{name}-autostart.desktop
 %{_bindir}/%{name}
 %{py_puresitedir}/*orca*
-%{_datadir}/%{name}
+#{_datadir}/%{name}
 %{_iconsdir}/hicolor/*/apps/%{name}*.*
 %{_mandir}/man1/%{name}.1*
 %{_prefix}/lib/systemd/user/orca.service
+%{_datadir}/applications/orca.desktop
+%{_datadir}/glib-2.0/schemas/org.gnome.Orca.gschema.xml
