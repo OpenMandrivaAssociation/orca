@@ -84,3 +84,5 @@ that provides access via speech synthesis, braille, and magnification.
 %{_iconsdir}/hicolor/*/apps/%{name}*.*
 %{_mandir}/man1/%{name}.1*
 %{_prefix}/lib/systemd/user/orca.service
+%{_datadir}/applications/orca.desktop
+%{_datadir}/glib-2.0/schemas/org.gnome.Orca.gschema.xml
