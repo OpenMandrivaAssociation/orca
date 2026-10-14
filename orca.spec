@@ -10,7 +10,7 @@
 Summary:	GNOME screen reader for people with visual impairments
 Name:		orca
 Version:	50.2
-Release:	1
+Release:	2
 License:	LGPLv2+
 Group:		Accessibility
 Url:		https://live.gnome.org/Orca/
@@ -23,8 +23,8 @@ BuildRequires:	itstool
 BuildRequires:	python-brlapi
 BuildRequires:	python-cairo
 BuildRequires:	python-gi
-BuildRequires:	python3-louis
-BuildRequires:	python-xdg
+BuildRequires:	python%{pyver}dist(louis)
+BuildRequires:	python%{pyver}dist(pyxdg)
 BuildRequires:	python-speechd
 BuildRequires:  brlapi-devel
 BuildRequires:	pkgconfig(atspi-2)
@@ -36,14 +36,14 @@ BuildRequires:  pkgconfig(systemd)
 BuildRequires:  pkgconfig(libwnck-3.0)
 BuildRequires:	pkgconfig(pygobject-3.0) >= 2.90.3
 BuildRequires:  pkgconfig(gobject-introspection-1.0)
-BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(python3)
 BuildRequires:  python-dasbus
 BuildRequires:  python-psutil
 Requires:	python-atspi
 Requires:	python-brlapi
 Requires:	python-cairo
-Requires:	python3-louis
-Requires:	python-xdg
+Requires:	python%{pyver}dist(louis)
+Requires:	python%{pyver}dist(pyxdg)
 Requires:	python-speechd
 Requires: python-dasbus
 Requires: python-psutil
