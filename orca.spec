@@ -9,8 +9,8 @@
 
 Summary:	GNOME screen reader for people with visual impairments
 Name:		orca
-Version:	50.2
-Release:	2
+Version:	51.1
+Release:	1
 License:	LGPLv2+
 Group:		Accessibility
 Url:		https://live.gnome.org/Orca/
@@ -67,7 +67,8 @@ that provides access via speech synthesis, braille, and magnification.
 %autosetup -p1
 
 %build
-%meson
+# MathCAT (MathML support) requires Rust. Lets disable it for now.
+%meson -Dmathcat=false
 %meson_build
 
 %install
