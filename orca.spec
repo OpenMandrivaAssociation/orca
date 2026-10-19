@@ -29,6 +29,7 @@ BuildRequires:	python-speechd
 BuildRequires:  brlapi-devel
 BuildRequires:	pkgconfig(atspi-2)
 BuildRequires:  pkgconfig(atk-bridge-2.0)
+BuildRequires:  at-spi2-core
 BuildRequires:	pkgconfig(gnome-doc-utils) >= 0.17.3
 BuildRequires:	pkgconfig(gtk+-3.0) >= 3.1.14
 BuildRequires:	pkgconfig(liblouis)
